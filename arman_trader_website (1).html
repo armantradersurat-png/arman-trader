@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arman Trader - Premium Zari & Jari Wholesale, Surat</title>
+<meta name="description" content="Arman Trader - Surat's trusted wholesale supplier of premium Zari, Jari, and embroidery materials. Best rates, pan India delivery.">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',sans-serif;background:#fff;color:#1E293B;}
+
+  nav{background:#fff;border-bottom:1px solid #E2E8F0;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,0.06);}
+  .logo{font-size:22px;font-weight:700;letter-spacing:1px;}
+  .logo .l1{color:#D4A017;} .logo .l2{color:#0F172A;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{color:#475569;text-decoration:none;font-size:14px;}
+  .nav-links a:hover{color:#D4A017;}
+  .nav-btn{background:#D4A017;color:#fff;border:none;padding:8px 20px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;}
+
+  .hero{background:linear-gradient(135deg,#fffdf5 0%,#fff8e1 40%,#fffde7 100%);border-bottom:2px solid #F5C518;padding:70px 5%;display:flex;align-items:center;justify-content:space-between;gap:40px;min-height:440px;}
+  .hero-text h1{font-size:42px;font-weight:700;line-height:1.2;max-width:520px;}
+  .hero-text h1 .g{color:#D4A017;} .hero-text h1 .b{color:#B8860B;} .hero-text h1 .dark{color:#1E293B;}
+  .hero-text p{margin-top:16px;color:#64748B;font-size:16px;max-width:480px;line-height:1.8;}
+  .hero-btns{margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-gold{background:#D4A017;color:#fff;padding:12px 28px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;}
+  .btn-outline-gold{background:transparent;color:#B8860B;padding:12px 28px;border-radius:6px;font-weight:700;font-size:15px;border:2px solid #D4A017;text-decoration:none;cursor:pointer;}
+  .hero-badge{background:#fff;border:2px solid #D4A017;border-radius:14px;padding:28px 32px;min-width:230px;text-align:center;box-shadow:0 4px 20px rgba(212,160,23,0.15);}
+  .hero-badge .big{font-size:38px;font-weight:700;color:#D4A017;}
+  .hero-badge .label{font-size:13px;color:#94A3B8;margin-top:4px;}
+
+  .stats{background:#F8FAFC;padding:32px 5%;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;border-bottom:1px solid #E2E8F0;}
+  .stat{text-align:center;}
+  .stat .num{font-size:28px;font-weight:700;color:#D4A017;}
+  .stat .txt{font-size:12px;color:#94A3B8;margin-top:3px;text-transform:uppercase;letter-spacing:0.5px;}
+
+  .about{background:#FFFDF5;padding:56px 5%;border-top:1px solid #F5E9B8;}
+  .about-inner{display:flex;gap:48px;align-items:center;flex-wrap:wrap;}
+  .about-text{flex:1;min-width:280px;}
+  .about-text h2{font-size:26px;font-weight:700;color:#0F172A;margin-bottom:14px;}
+  .about-text h2 span{color:#D4A017;}
+  .about-text p{color:#64748B;font-size:15px;line-height:1.85;margin-bottom:12px;}
+  .about-highlights{flex:1;min-width:260px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .highlight-box{background:#fff;border:1px solid #E2E8F0;border-left:3px solid #D4A017;border-radius:10px;padding:16px;}
+  .highlight-box .h-num{font-size:24px;font-weight:700;color:#D4A017;}
+  .highlight-box .h-txt{font-size:12px;color:#94A3B8;margin-top:2px;}
+
+  .section{padding:56px 5%;background:#fff;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px;}
+  .sec-head h2{font-size:26px;font-weight:700;color:#0F172A;}
+  .sec-head h2 span{color:#D4A017;}
+  .sec-head p{color:#94A3B8;font-size:13px;margin-top:4px;}
+  .head-right{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+  .filter-btns{display:flex;gap:8px;}
+  .filter-btn{background:#F1F5F9;border:1px solid #E2E8F0;color:#64748B;padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;transition:all 0.2s;}
+  .filter-btn.active{background:#D4A017;color:#fff;border-color:#D4A017;font-weight:600;}
+  .add-btn{background:#D4A017;color:#fff;border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;}
+
+  .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center;}
+  .modal-overlay.show{display:flex;}
+  .modal{background:#fff;border-radius:16px;padding:32px;width:90%;max-width:460px;border:2px solid #D4A017;max-height:90vh;overflow-y:auto;}
+  .modal h3{font-size:18px;font-weight:700;color:#0F172A;margin-bottom:20px;}
+  .modal h3 span{color:#D4A017;}
+  .form-group{margin-bottom:16px;}
+  .form-group label{display:block;font-size:12px;font-weight:600;color:#64748B;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+  .form-group input,.form-group textarea,.form-group select{width:100%;background:#F8FAFC;border:1px solid #E2E8F0;color:#0F172A;padding:10px 12px;border-radius:8px;font-size:14px;font-family:inherit;outline:none;}
+  .form-group input:focus,.form-group textarea:focus{border-color:#D4A017;}
+  .form-group textarea{resize:vertical;min-height:72px;}
+  .photo-upload{border:2px dashed #E2E8F0;border-radius:10px;padding:20px;text-align:center;cursor:pointer;transition:border-color 0.2s;position:relative;}
+  .photo-upload:hover{border-color:#D4A017;}
+  .photo-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+  .photo-upload p{font-size:13px;color:#94A3B8;}
+  .photo-upload .icon{font-size:28px;margin-bottom:6px;}
+  .photo-preview{width:100%;height:120px;object-fit:cover;border-radius:8px;margin-top:10px;display:none;}
+  .modal-btns{display:flex;gap:10px;margin-top:20px;}
+  .save-btn{flex:1;background:#D4A017;color:#fff;border:none;padding:11px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;}
+  .cancel-btn{flex:1;background:#F1F5F9;color:#64748B;border:1px solid #E2E8F0;padding:11px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;}
+
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;}
+  .product-card{background:#fff;border:1px solid #E2E8F0;border-radius:14px;overflow:hidden;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;position:relative;}
+  .product-card:hover{transform:translateY(-4px);border-color:#D4A017;box-shadow:0 8px 24px rgba(212,160,23,0.12);}
+  .product-card.out-of-stock{opacity:0.55;}
+  .product-img{width:100%;height:130px;display:flex;align-items:center;justify-content:center;font-size:44px;background:#FEF9EE;overflow:hidden;}
+  .product-img img{width:100%;height:100%;object-fit:cover;}
+  .product-body{padding:14px;}
+  .product-body h3{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:3px;}
+  .product-body .desc{font-size:12px;color:#94A3B8;line-height:1.5;margin-bottom:10px;}
+  .price-tag{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(90deg,#D4A017,#F5C518);color:#fff;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px;}
+  .price-input-wrap{display:none;margin-bottom:10px;}
+  .price-input-wrap.show{display:flex;gap:6px;align-items:center;}
+  .price-input-wrap input{background:#F8FAFC;border:1px solid #E2E8F0;color:#0F172A;padding:5px 10px;border-radius:6px;font-size:13px;width:110px;outline:none;}
+  .price-input-wrap button{background:#D4A017;color:#fff;border:none;padding:5px 10px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;}
+  .edit-price-btn{background:none;border:none;font-size:11px;color:#fff;cursor:pointer;}
+  .product-footer{display:flex;align-items:center;justify-content:space-between;gap:6px;}
+  .stock-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;}
+  .in-stock{background:#DCFCE7;color:#166534;}
+  .out-badge{background:#FEE2E2;color:#991B1B;}
+  .card-actions{display:flex;gap:4px;}
+  .toggle-btn{background:none;border:1px solid #E2E8F0;color:#64748B;font-size:11px;padding:3px 8px;border-radius:20px;cursor:pointer;}
+  .toggle-btn:hover{border-color:#D4A017;color:#D4A017;}
+  .edit-card-btn{background:none;border:1px solid #E2E8F0;color:#64748B;font-size:11px;padding:3px 8px;border-radius:20px;cursor:pointer;}
+  .edit-card-btn:hover{border-color:#38BDF8;color:#38BDF8;}
+  .del-btn{background:none;border:1px solid #E2E8F0;color:#64748B;font-size:11px;padding:3px 8px;border-radius:20px;cursor:pointer;}
+  .del-btn:hover{border-color:#ef4444;color:#ef4444;}
+  .out-of-stock-overlay{position:absolute;top:10px;right:10px;background:#FEE2E2;color:#991B1B;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;}
+
+  .why{background:#FFFDF5;padding:56px 5%;border-top:1px solid #F5C518;}
+  .why h2{font-size:26px;font-weight:700;color:#0F172A;}
+  .why h2 span{color:#D4A017;}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:32px;}
+  .why-card{background:#fff;border-radius:10px;padding:20px 18px;border:1px solid #E2E8F0;border-left:3px solid #D4A017;}
+  .why-card h3{font-size:14px;font-weight:700;margin-bottom:6px;color:#D4A017;}
+  .why-card p{color:#64748B;font-size:13px;line-height:1.6;}
+
+  .contact{padding:56px 5%;background:#fff;}
+  .contact-box{background:#fff;border-radius:14px;padding:40px;max-width:580px;margin:0 auto;border:1.5px solid #D4A017;box-shadow:0 4px 24px rgba(212,160,23,0.10);}
+  .contact-box h2{font-size:22px;font-weight:700;color:#0F172A;margin-bottom:6px;}
+  .contact-box h2 span{color:#D4A017;}
+  .contact-box>.sub{color:#64748B;font-size:14px;margin-bottom:24px;line-height:1.7;}
+  .c-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid #F1F5F9;}
+  .c-row:last-of-type{border-bottom:none;}
+  .c-icon{background:#FEF9EE;border-radius:8px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid #E2E8F0;}
+  .c-label{font-size:11px;color:#94A3B8;text-transform:uppercase;letter-spacing:0.5px;}
+  .c-val{font-size:15px;font-weight:600;color:#0F172A;margin-top:2px;}
+  .c-val a{color:#D4A017;text-decoration:none;}
+  .c-val a:hover{text-decoration:underline;}
+  .contact-btns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+  .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;}
+  .mail-btn{display:inline-flex;align-items:center;gap:8px;background:#D4A017;color:#fff;padding:11px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;}
+
+  footer{background:#0F172A;padding:28px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .footer-left .logo-sm{font-size:18px;font-weight:700;}
+  .footer-left .logo-sm .g{color:#D4A017;}
+  .footer-left .logo-sm .w{color:#fff;}
+  .footer-left p{color:#64748B;font-size:13px;margin-top:4px;}
+  .footer-right{text-align:right;}
+  .footer-right p{color:#475569;font-size:13px;line-height:1.7;}
+  .footer-right a{color:#D4A017;text-decoration:none;font-size:13px;}
+  .empty-state{text-align:center;padding:48px 20px;color:#94A3B8;grid-column:1/-1;}
+  .empty-state .big-icon{font-size:48px;margin-bottom:12px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span class="l1">ARMAN</span> <span class="l2">TRADER</span></div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Now</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1><span class="dark">Premium </span><span class="g">Zari & Jari</span><br><span class="b">Wholesale </span><span class="dark">Trader</span></h1>
+    <p>Surat ke sabse bharosemand Zari aur Jari wholesale supplier. Pure gold, silver, antique aur fancy zari — sab kuch ek hi jagah. Textile manufacturers, boutiques aur craftsmen ke liye best wholesale rates aur pan India delivery.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-gold">View Products</a>
+      <a href="https://wa.me/919625686843" class="btn-outline-gold">WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <div class="big">10+</div>
+    <div class="label">Years of Experience</div>
+    <div style="margin-top:16px;border-top:1px solid #F5E9B8;padding-top:16px;">
+      <div class="big">500+</div>
+      <div class="label">Happy Clients</div>
+    </div>
+    <div style="margin-top:16px;border-top:1px solid #F5E9B8;padding-top:16px;">
+      <div class="big">100+</div>
+      <div class="label">Product Varieties</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="num">100+</div><div class="txt">Product Varieties</div></div>
+  <div class="stat"><div class="num">Pan India</div><div class="txt">Delivery Available</div></div>
+  <div class="stat"><div class="num">Bulk</div><div class="txt">Wholesale Rates</div></div>
+  <div class="stat"><div class="num">Fast</div><div class="txt">Order Processing</div></div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>Arman Trader ke <span>Baare Mein</span></h2>
+      <p>Arman Trader, Surat (Gujarat) mein sthit ek trusted wholesale supplier hai jo 10 se zyada saalon se premium quality Zari, Jari aur embroidery materials supply kar raha hai. Humara seedha naata top manufacturers se hai, isliye hum apne clients ko market ki best quality sabse competitive rates par dete hain.</p>
+      <p>Hamari range mein BCH Jari, Silver Jari, Antique Jari, Fancy Zari, Bullion Wire aur bahut saare specialty products shamil hain. Sarees, lehengas, bridal wear, ethnic fashion aur handicrafts — har kaam ke liye sahi material hamare paas milega.</p>
+      <p>Hum sirf product nahi, ek bharosemand partnership dete hain — samay par delivery, honest pricing, aur har order mein consistent quality.</p>
+    </div>
+    <div class="about-highlights">
+      <div class="highlight-box"><div class="h-num">10+</div><div class="h-txt">Saal ka Anubhav</div></div>
+      <div class="highlight-box"><div class="h-num">500+</div><div class="h-txt">Khush Clients</div></div>
+      <div class="highlight-box"><div class="h-num">100+</div><div class="h-txt">Product Varieties</div></div>
+      <div class="highlight-box"><div class="h-num">Pan India</div><div class="h-txt">Delivery Network</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="sec-head">
+    <div>
+      <h2>Our <span>Products</span></h2>
+      <p>Stock toggle • Price edit • Add/Remove products</p>
+    </div>
+    <div class="head-right">
+      <div class="filter-btns">
+        <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+        <button class="filter-btn" onclick="filterProducts('in',this)">In Stock</button>
+        <button class="filter-btn" onclick="filterProducts('out',this)">Out of Stock</button>
+      </div>
+      <button class="add-btn" onclick="openModal()">+ Add Product</button>
+    </div>
+  </div>
+  <div class="products-grid" id="product-grid"></div>
+</section>
+
+<section class="why">
+  <h2>Why <span>Choose Arman Trader?</span></h2>
+  <p style="color:#64748B;font-size:14px;margin-top:6px;line-height:1.7;max-width:600px;">Surat ke textile hub mein 10+ saalon se, hum sirf material nahi dete — quality, trust aur value dete hain.</p>
+  <div class="why-grid">
+    <div class="why-card"><h3>✦ Guaranteed Quality</h3><p>Har product top manufacturers se direct sourced hota hai. Strict quality check ke baad hi delivery — koi compromise nahi.</p></div>
+    <div class="why-card"><h3>✦ Best Wholesale Rates</h3><p>Direct manufacturer se kharidne ka faayda aapko milta hai. Bulk orders par market se better rates — guaranteed.</p></div>
+    <div class="why-card"><h3>✦ Pan India Delivery</h3><p>Delhi ho ya Chennai, Mumbai ho ya Kolkata — poore India mein fast aur safe delivery. Bulk orders bhi time par.</p></div>
+    <div class="why-card"><h3>✦ 10+ Saal ka Bharosa</h3><p>500 se zyada satisfied clients — manufacturers, boutiques, designers aur craftsmen — sabne Arman Trader par trust kiya.</p></div>
+    <div class="why-card"><h3>✦ Wide Range</h3><p>BCH se lekar Antique, Silver, Fancy Zari tak — 100+ varieties ek hi jagah. Aapki zaroorat ke hisaab se sahi product.</p></div>
+    <div class="why-card"><h3>✦ Quick Response</h3><p>WhatsApp ya email pe inquiry karo — hum usi din reply karte hain. Order placement se delivery tak full support.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-box">
+    <h2>Humse <span>Sampark Karein</span></h2>
+    <p class="sub">Bulk order ke liye enquiry karein, product ka rate poochhen, ya sample maangein — hum aapki madad ke liye taiyaar hain. WhatsApp ya email karein, usi din jawab milega!</p>
+    <div class="c-row"><div class="c-icon">📞</div><div><div class="c-label">Phone / Call</div><div class="c-val">+91 96256 86843</div></div></div>
+    <div class="c-row"><div class="c-icon">💬</div><div><div class="c-label">WhatsApp</div><div class="c-val">+91 96256 86843</div></div></div>
+    <div class="c-row"><div class="c-icon">✉️</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:armantradersurat@gmail.com">armantradersurat@gmail.com</a></div></div></div>
+    <div class="c-row"><div class="c-icon">📍</div><div><div class="c-label">Location</div><div class="c-val">Surat, Gujarat — 394210</div></div></div>
+    <div class="c-row"><div class="c-icon">📦</div><div><div class="c-label">Order Type</div><div class="c-val">Wholesale & Bulk Orders Welcome</div></div></div>
+    <div class="contact-btns">
+      <a href="https://wa.me/919625686843" class="wa-btn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Karen
+      </a>
+      <a href="mailto:armantradersurat@gmail.com" class="mail-btn">✉️ Email Karen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <div class="logo-sm"><span class="g">ARMAN </span><span class="w">TRADER</span></div>
+    <p>Surat, Gujarat — 394210 | Est. 2014</p>
+  </div>
+  <div class="footer-right">
+    <p><a href="mailto:armantradersurat@gmail.com">armantradersurat@gmail.com</a></p>
+    <p>+91 96256 86843</p>
+    <p style="margin-top:4px;">© 2025 Arman Trader. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <h3 id="modal-title">Add <span>New Product</span></h3>
+    <div class="form-group"><label>Product Name *</label><input type="text" id="f-name" placeholder="e.g. Gold Zari Thread"/></div>
+    <div class="form-group"><label>Description</label><textarea id="f-desc" placeholder="Product ki khasiyat likhein..."></textarea></div>
+    <div class="form-group"><label>Price</label><input type="text" id="f-price" placeholder="e.g. 250/kg ya Call for Price"/></div>
+    <div class="form-group"><label>Stock Status</label><select id="f-stock"><option value="in">In Stock</option><option value="out">Out of Stock</option></select></div>
+    <div class="form-group">
+      <label>Product Photo</label>
+      <div class="photo-upload"><div class="icon">📷</div><p>Click karke photo upload karein</p><input type="file" accept="image/*" id="f-photo" onchange="previewPhoto(this)"/></div>
+      <img id="photo-preview" class="photo-preview" src="" alt="preview"/>
+    </div>
+    <div class="modal-btns">
+      <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+      <button class="save-btn" onclick="saveProduct()">Save Product</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let products=[
+  {id:1,name:"BCH Jari",desc:"Premium BCH jari jo har tarah ke embroidery aur textile kaam ke liye suitable hai. Smooth finish aur lambi tikao ke saath aata hai.",icon:"✦",inStock:true,price:"Call for Price",photo:null},
+  {id:2,name:"Silver Jari",desc:"Chamakdar silver tone jari thread — sarees, lehengas aur bridal wear ke liye perfect. Pure quality guarantee ke saath.",icon:"◈",inStock:true,price:"Call for Price",photo:null},
+  {id:3,name:"Antique Jari",desc:"Classic antique finish jari jo vintage golden look deta hai. Zardozi, hand embroidery aur ethnic fashion ke liye ideal.",icon:"❖",inStock:true,price:"Call for Price",photo:null},
+];
+let currentFilter='all',editingId=null,priceEditId=null,nextId=4,currentPhoto=null;
+const icons=["✦","◈","❖","★","◇","⬡","❋","✿","◉","⊕","✪","⬟"];
+
+function renderProducts(){
+  const grid=document.getElementById('product-grid');
+  const filtered=products.filter(p=>{if(currentFilter==='in')return p.inStock;if(currentFilter==='out')return !p.inStock;return true;});
+  if(filtered.length===0){grid.innerHTML='<div class="empty-state"><div class="big-icon">📦</div><p>Koi product nahi mila. "+ Add Product" karein!</p></div>';return;}
+  grid.innerHTML=filtered.map(p=>`
+    <div class="product-card ${!p.inStock?'out-of-stock':''}">
+      ${!p.inStock?'<div class="out-of-stock-overlay">OUT OF STOCK</div>':''}
+      <div class="product-img">${p.photo?'<img src="'+p.photo+'" alt="'+p.name+'"/>':p.icon}</div>
+      <div class="product-body">
+        <h3>${p.name}</h3><p class="desc">${p.desc||'Premium quality product.'}</p>
+        <div class="price-tag">₹ ${p.price||'Call for Price'}<button class="edit-price-btn" onclick="showPriceEdit(${p.id})">✎</button></div>
+        <div class="price-input-wrap ${priceEditId===p.id?'show':''}"><input type="text" id="pi-${p.id}" value="${p.price||''}" placeholder="e.g. 250/kg"/><button onclick="savePrice(${p.id})">Save</button></div>
+        <div class="product-footer">
+          <span class="stock-badge ${p.inStock?'in-stock':'out-badge'}">${p.inStock?'In Stock':'Out of Stock'}</span>
+          <div class="card-actions">
+            <button class="toggle-btn" onclick="toggleStock(${p.id})">${p.inStock?'Out':'In'}</button>
+            <button class="edit-card-btn" onclick="openEditModal(${p.id})">✎</button>
+            <button class="del-btn" onclick="deleteProduct(${p.id})">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function openModal(){editingId=null;currentPhoto=null;document.getElementById('modal-title').innerHTML='Add <span style="color:#D4A017">New Product</span>';document.getElementById('f-name').value='';document.getElementById('f-desc').value='';document.getElementById('f-price').value='';document.getElementById('f-stock').value='in';document.getElementById('f-photo').value='';document.getElementById('photo-preview').style.display='none';document.getElementById('modal-overlay').classList.add('show');}
+function openEditModal(id){const p=products.find(x=>x.id===id);if(!p)return;editingId=id;currentPhoto=p.photo||null;document.getElementById('modal-title').innerHTML='Edit <span style="color:#D4A017">Product</span>';document.getElementById('f-name').value=p.name;document.getElementById('f-desc').value=p.desc||'';document.getElementById('f-price').value=p.price||'';document.getElementById('f-stock').value=p.inStock?'in':'out';const prev=document.getElementById('photo-preview');if(p.photo){prev.src=p.photo;prev.style.display='block';}else{prev.style.display='none';}document.getElementById('modal-overlay').classList.add('show');}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('show');currentPhoto=null;}
+function previewPhoto(input){const file=input.files[0];if(!file)return;const reader=new FileReader();reader.onload=e=>{currentPhoto=e.target.result;const prev=document.getElementById('photo-preview');prev.src=currentPhoto;prev.style.display='block';};reader.readAsDataURL(file);}
+function saveProduct(){const name=document.getElementById('f-name').value.trim();if(!name){alert('Product ka naam zaroor daalo!');return;}const desc=document.getElementById('f-desc').value.trim();const price=document.getElementById('f-price').value.trim()||'Call for Price';const inStock=document.getElementById('f-stock').value==='in';if(editingId){const p=products.find(x=>x.id===editingId);if(p){p.name=name;p.desc=desc;p.price=price;p.inStock=inStock;if(currentPhoto)p.photo=currentPhoto;}}else{products.push({id:nextId++,name,desc,icon:icons[products.length%icons.length],inStock,price,photo:currentPhoto});}closeModal();renderProducts();}
+function showPriceEdit(id){priceEditId=id;renderProducts();const inp=document.getElementById('pi-'+id);if(inp){inp.focus();inp.select();}}
+function savePrice(id){const inp=document.getElementById('pi-'+id);const p=products.find(x=>x.id===id);if(p&&inp)p.price=inp.value||'Call for Price';priceEditId=null;renderProducts();}
+function toggleStock(id){const p=products.find(x=>x.id===id);if(p){p.inStock=!p.inStock;renderProducts();}}
+function deleteProduct(id){if(confirm('Yeh product delete karna chahte ho?')){products=products.filter(x=>x.id!==id);renderProducts();}}
+function filterProducts(type,btn){currentFilter=type;document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderProducts();}
+renderProducts();
+</script>
+</body>
+</html>
